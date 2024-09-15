@@ -24,12 +24,22 @@ npm run lesson1
 
 ## Lesson 2
 
-* Elements: form, input, select, video, audio, picture
+* Lesson 1 review, mini quiz, 1:1 computer setup
+* write your first HTML page.
+
+```shell
+npm run lesson2
+```
 
 ## Lesson 3
 
-* build a blog
+* more HTML elements and hands on exercise
+
+```shell
+npm run lesson3
+```
 
 ## Lesson 4
 
-* CSS syntax
+* build a blog with just HTML.
+
