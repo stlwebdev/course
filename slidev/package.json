@@ -1,24 +1,26 @@
 {
-  "name": "slmcs-webdev",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "lesson1": "slidev --open lesson1.md",
-    "export1": "slidev export lesson1.md",
-    "lesson2": "slidev --open lesson2.md",
-    "export2": "slidev export lesson2.md",
-    "lesson3": "slidev --open lesson3.md",
-    "export3": "slidev export lesson3.md"
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.49.24",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.4.33"
-  },
-  "devDependencies": {
-    "playwright-chromium": "^1.47.0"
-  }
+    "name": "slmcs-webdev",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "slidev build",
+        "dev": "slidev --open",
+        "lesson1": "slidev --open lesson1.md",
+        "export1": "slidev export lesson1.md",
+        "lesson2": "slidev --open lesson2.md",
+        "export2": "slidev export lesson2.md",
+        "lesson3": "slidev --open lesson3.md",
+        "export3": "slidev export lesson3.md",
+        "lesson5": "slidev --open lesson5.md",
+        "export5": "slidev export lesson5.md"
+    },
+    "dependencies": {
+        "@slidev/cli": "^0.49.24",
+        "@slidev/theme-default": "latest",
+        "@slidev/theme-seriph": "latest",
+        "vue": "^3.4.33"
+    },
+    "devDependencies": {
+        "playwright-chromium": "^1.47.0"
+    }
 }
