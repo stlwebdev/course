@@ -33,7 +33,7 @@ npm run lesson2
 
 ## Lesson 3
 
-* more HTML elements and hands on exercise
+* HTML contents/section elements and hands on exercise
 
 ```shell
 npm run lesson3
@@ -41,5 +41,17 @@ npm run lesson3
 
 ## Lesson 4
 
+* Instructed by Chad
+* HTML form, video, audio elements
+
+## Lesson 5
+
+* Tables
+
 * build a blog with just HTML.
 
+## Lesson 6 - midterm project and presentation
+
+* Each student get 2 mins to show the website s/he built
+* Each website demo'ed should have at least 3 pages/HTML files, cover as more elements as possible
+* tags like heading, div, paragraph, anchor, image, form, table need be included in the website
