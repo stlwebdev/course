@@ -55,3 +55,8 @@ npm run lesson3
 * Each student get 2 mins to show the website s/he built
 * Each website demo'ed should have at least 3 pages/HTML files, cover as more elements as possible
 * tags like heading, div, paragraph, anchor, image, form, table need be included in the website
+
+## Lesson 7
+
+* CSS fundamentals
+* CSS basic syntax
