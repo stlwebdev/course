@@ -60,3 +60,9 @@ npm run lesson3
 
 * CSS fundamentals
 * CSS basic syntax
+* How to apply CSS
+
+## Lesson 8
+
+* How to apply CSS (continued)
+* CSS colors
