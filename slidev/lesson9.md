@@ -40,8 +40,6 @@ Oct 27, 2024
 - **Disadvantages:**
   - Less flexible and can impact responsiveness, especially on different devices or screen resolutions.
 
-- **Example:**
-
   ```css
   .fixed-box {
     width: 300px;
@@ -184,308 +182,181 @@ Oct 27, 2024
 
 ---
 
-# CSS Selectors recap
+# CSS Borders: Basics
 
-- Universal, type, class, ID, attribute, pseudo-classes, pseudo-elements
-- Practical examples of each selector type
+- **What Are CSS Borders?**
+  - Borders are lines that surround an HTML element, providing a visual boundary.
+  - You can control the **width**, **style**, and **color** of borders.
+  - Borders can be applied to all sides of an element or to specific sides (top, right, bottom, left).
 
----
+- **Basic Border Properties:**
+  - `border`: A shorthand property to define width, style, and color.
+  - `border-width`: Defines the thickness of the border.
+  - `border-style`: Defines the style (e.g., solid, dotted).
+  - `border-color`: Defines the color of the border.
 
-# Advanced CSS Selectors
-
-- Attribute selectors with operators: `[attr=value]`, `[attr^=value]`, `[attr$=value]`
-- Example: `[href^="https"] { color: green; }`
-
----
-
-# Pseudo-Classes in Depth
-
-- Understanding `:nth-child`, `:not`, `:nth-of-type`
-- Example use cases for styling lists and tables
-
----
-
-# Pseudo-Elements in Depth
-
-- Using `::before`, `::after`, `::first-line`, `::first-letter`
-- Styling with content insertion and decorative elements
+  ```css
+  .box {
+    border: 2px solid black;
+  }
+  ```
 
 ---
 
-# Cascading and Inheritance
+# Border Width
 
-- How CSS prioritizes rules: specificity, importance, source order
-- Understanding inheritance and default browser styles
+  - The `border-width` property sets the thickness of the border.
+  - You can specify the width in pixels (`px`), ems (`em`), or other units.
+  - You can define a uniform width for all sides or specify different widths for each side.
 
----
+  - Common units: `px`, `em`, `%`.
+  - Keywords: `thin`, `medium`, `thick` (default values).
 
-# CSS Variables (Custom Properties)
+  ```css
+  .box {
+    border-width: 5px; /* Uniform width on all sides */
+  }
+  .box-sides {
+    border-width: 5px 10px 5px 0; /* Different widths: top, right, bottom, left */
+  }
+  ```
 
-- Defining, using, and manipulating custom properties
-- Example: `--primary-color: #3498db;`
-
----
-
-# CSS Units Explained
-
-- Absolute vs. relative units: px, em, rem, vh, vw, %
-- Choosing appropriate units for responsive design
-
----
-
-# Color Management in CSS
-
-- Color models: HEX, RGB, RGBA, HSL, HSLA
-- Using opacity with RGBA and HSLA
+- **Tip:** - Adjusting `border-width` can help with layout and design precision, especially when dealing with responsive layouts.
 
 ---
 
-# Typography and Font Styling
+# Border Style
 
-- Font properties: `font-family`, `font-size`, `font-weight`, `font-style`
-- Example with web-safe fonts and custom fonts
+  - The `border-style` property defines the appearance or pattern of the border.
+  - Multiple styles are available: `solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset`, and `none`.
+  - **Solid**: A single, continuous line.
+  - **Dashed**: A line made of dashes.
+  - **Dotted**: A line made of dots.
+  - **Double**: Two parallel solid lines.
+  - **None**: No border (used to override inherited borders).
 
----
+  ```css
+  .solid-border {
+    border-style: solid;
+  }
+  .dashed-border {
+    border-style: dashed;
+  }
+  ```
 
-# Text Effects
-
-- Applying `text-shadow`, `letter-spacing`, `word-spacing`, `text-transform`
-- Example: Creating embossed or shadowed text effects
-
----
-
-# Backgrounds and Gradients
-
-- Background properties: color, image, size, repeat, position, attachment
-- Creating linear and radial gradients with examples
-
----
-
-# Borders and Outline Styling
-
-- Border properties: `border-radius`, `border-image`, `border-style`
-- Differences between borders and outlines
+- **Tip:** - Use `border-style` to differentiate elements visually, especially for dividing sections of a page or creating emphasis.
 
 ---
 
-# CSS Box Model in Detail
+# Border Color
 
-- Understanding content, padding, border, and margin in the box model
-- Example of calculating box dimensions with `box-sizing`
+  - The `border-color` property sets the color of the border.
+  - You can specify a single color for all sides, or different colors for each side.
 
----
+  - Named colors (`red`, `blue`, `black`).
+  - Hex values (`#ff0000`, `#3498db`).
+  - RGB, RGBA, HSL, HSLA values for transparency or specific shades.
 
-# Flexbox Layout System
+  ```css
+  .colored-border {
+    border-color: red;
+  }
+  .multi-colored-border {
+    border-color: red green blue yellow; /* Different colors for each side */
+  }
+  ```
 
-- Flex container and flex item properties
-- Key properties: `flex-direction`, `justify-content`, `align-items`, `flex-wrap`
-
----
-
-# Advanced Flexbox Techniques
-
-- Creating complex layouts with nested flex containers
-- Examples with `align-self`, `order`, and `flex-grow`
-
----
-
-# CSS Grid Layout System
-
-- Defining grid containers with `display: grid`
-- Creating rows and columns with `grid-template-rows` and `grid-template-columns`
+- **Tip:** - `rgba()` allows for transparent borders, creating effects like semi-transparent overlays.
 
 ---
 
-# Grid Areas and Nested Grids
+# Shorthand: border Property
 
-- Using `grid-template-areas` to name and place grid sections
-- Example of nested grids for complex layouts
+  - `border` is a shorthand property that lets you define `border-width`, `border-style`, and `border-color` in a single declaration.
+  - Syntax: `border: width style color;`
 
----
+  ```css
+  .box {
+    border: 3px solid red; /* Width, style, color in one line */
+  }
+  ```
 
-# Responsive Web Design with Media Queries
+  - Use `border-top`, `border-right`, `border-bottom`, and `border-left` to define borders for specific sides.
+  - Example:
 
-- Creating breakpoints with media queries
-- Example: `@media (max-width: 768px) { ... }`
+    ```css
+    .top-border {
+      border-top: 4px dotted blue;
+    }
+    ```
 
----
-
-# Mobile-First Design Philosophy
-
-- Benefits of starting with mobile styles and enhancing for larger screens
-- Example media query adjustments for tablet and desktop
-
----
-
-# CSS Transitions
-
-- Transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`
-- Example: Smoothly changing button colors on hover
+- **Tip:** - Shorthand makes your code more concise, but for greater control over specific sides, use individual properties.
 
 ---
 
-# CSS Animations
+# Border Radius
 
-- Defining animations with `@keyframes`
-- Animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`
+  - `border-radius` creates rounded corners on elements.
+  - You can apply a uniform radius to all corners, or define specific values for each corner.
 
----
+  - Pixels (`px`), percentages (`%`), and ems (`em`).
+  - A percentage creates an ellipse, commonly used for circular elements (e.g., `50%` for circles).
 
-# Advanced Animation Techniques
 
-- Using `transform` and `animation` together for dynamic effects
-- Example: Spinning icons and pulsing effects
+  ```css
+  .rounded-box {
+    border-radius: 10px;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  ```
 
----
-
-# CSS Transformations
-
-- Applying `translate`, `rotate`, `scale`, `skew`
-- Example: Creating a 3D effect on hover
-
----
-
-# CSS Filters and Effects
-
-- Using `filter` for grayscale, blur, brightness, contrast
-- Example: Creating a grayscale-to-color hover effect
+- **Tip:** - Combining `border-radius` with `box-shadow` can create button-like effects or emphasize elements.
 
 ---
 
-# Using CSS to Create Shapes
+# Border Image
 
-- Simple shapes with borders, circles, and triangles
-- Example: Creating a triangle with `border`
+  - The `border-image` property allows you to use an image as the border of an element.
+  - This property slices an image into sections and places those sections around the element.
 
----
+  - `border-image-source`: The image URL.
+  - `border-image-slice`: Specifies how the image is sliced for placement around the border.
 
-# CSS Clip Path for Advanced Shapes
+  ```css
+  .image-border {
+    border: 10px solid;
+    border-image: url('border-image.png') 30 round;
+  }
+  ```
 
-- Using `clip-path` for complex shapes like polygons, circles, and custom paths
-- Example: Cropping images with clip-path
-
----
-
-# CSS Gradients and Patterns
-
-- Creating repeating patterns with CSS gradients
-- Example: Chevron patterns with linear-gradient
+- **Tip:** - `border-image` is great for adding creative and decorative borders to enhance visual design.
 
 ---
 
-# CSS Masking
+# Advanced: Box Shadows and Outlines
 
-- Using `mask-image` and `mask-size` for custom image effects
-- Example: Creating text cutouts and masked images
+  - `box-shadow` allows you to create a shadow around an element, often combined with borders for depth.
+  - Syntax: `box-shadow: h-offset v-offset blur color;`
 
----
+  ```css
+  .box-shadow {
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  ```
 
-# CSS Blend Modes
+- **Outlines vs Borders:**
+  - `outline` is similar to `border`, but doesn't affect the box model (it doesn't occupy space).
+  - Useful for accessibility as it highlights elements during keyboard navigation.
 
-- Using `mix-blend-mode` and `background-blend-mode` for color blending
-- Example: Overlay effects with blend modes
+  ```css
+  .outlined-box {
+    outline: 2px dashed orange;
+  }
+  ```
 
----
-
-# Flexbox vs. Grid: When to Use Each
-
-- Comparing Flexbox and Grid use cases
-- Examples of layouts best suited for each
-
----
-
-# CSS Logical Properties
-
-- Understanding `margin-inline`, `padding-block`, `border-start`
-- Supporting languages with different writing directions
-
----
-
-# Accessibility with CSS
-
-- Using CSS for improved readability and accessibility
-- Example: `focus` and `:hover` for keyboard navigation
-
----
-
-# CSS Frameworks and Preprocessors
-
-- Overview of popular CSS frameworks: Bootstrap, Tailwind, Bulma
-- Introduction to preprocessors: Sass, LESS
-
----
-
-# CSS Methodologies: BEM, OOCSS, SMACSS
-
-- Overview of CSS naming conventions and organizational techniques
-- Examples of BEM (Block, Element, Modifier) syntax
-
----
-
-# CSS in JavaScript
-
-- Inline styles vs. styled-components vs. CSS Modules
-- Example of styling React components with CSS Modules
-
----
-
-# CSS Grid Template Areas Example
-
-- Using named grid areas for intuitive layout
-- Example with headers, footers, and sidebars
-
----
-
-# Fluid Typography and Responsive Units
-
-- Using `calc()`, `min()`, and `max()` for responsive font sizes
-- Example: `font-size: calc(1rem + 2vw);`
-
----
-
-# Advanced Selectors: :is(), :where(), :has()
-
-- Reducing specificity with `:is()` and `:where()`
-- Using `:has()` for parent-child relationships (currently limited support)
-
----
-
-# Print Stylesheets
-
-- Creating styles for printed versions with `@media print`
-- Example of removing navigation for print
-
----
-
-# CSS Grid and Flexbox Together
-
-- Combining Grid and Flexbox for hybrid layouts
-- Example: Grid for the overall layout, Flexbox for individual sections
-
----
-
-# CSS Resets and Normalization
-
-- Differences between CSS resets and normalize.css
-- Example of a basic CSS reset
-
----
-
-# Future of CSS: Upcoming Features
-
-- New and experimental CSS features like container queries, CSS Houdini
-- Potential impact on web design
-
----
-
-# Conclusion and Best Practices
-
-- Summary of key CSS concepts
-- Tips for writing maintainable and scalable CSS
-
----
-
-# Q&A and Further Resources
-
-- Open floor for questions
-- Suggested resources for continued learning: MDN, CSS Tricks, CodePen
+- **Tip:** - `box-shadow` is perfect for adding depth and highlighting interactive elements. Use `outline` for focus states in forms and navigation.
