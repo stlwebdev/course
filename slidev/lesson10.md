@@ -14,308 +14,145 @@ Nov 3, 2024
 
 ---
 
-# CSS Selectors recap
+# CSS Fonts: Basics
+- **What Are CSS Fonts?**
+  - Fonts define the appearance of text within a web page.
+  - CSS provides various properties to control font family, size, weight, style, and more.
+  - Choosing appropriate fonts is key for readability and design aesthetics.
 
-- Universal, type, class, ID, attribute, pseudo-classes, pseudo-elements
-- Practical examples of each selector type
+- **Common Font Properties:**
+  - `font-family`: Specifies the typeface (e.g., Arial, Georgia).
+  - `font-size`: Defines text size.
+  - `font-weight`: Sets font thickness (e.g., bold).
+  - `font-style`: Specifies style (e.g., italic).
 
----
-
-# Advanced CSS Selectors
-
-- Attribute selectors with operators: `[attr=value]`, `[attr^=value]`, `[attr$=value]`
-- Example: `[href^="https"] { color: green; }`
-
----
-
-# Pseudo-Classes in Depth
-
-- Understanding `:nth-child`, `:not`, `:nth-of-type`
-- Example use cases for styling lists and tables
-
----
-
-# Pseudo-Elements in Depth
-
-- Using `::before`, `::after`, `::first-line`, `::first-letter`
-- Styling with content insertion and decorative elements
+  ```css
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  ```
 
 ---
 
-# Cascading and Inheritance
+# Font Families and Fallbacks
 
-- How CSS prioritizes rules: specificity, importance, source order
-- Understanding inheritance and default browser styles
+- **What Is `font-family`?**
+  - `font-family` sets the typeface for an element. Specify multiple fonts as fallbacks.
+  - Fallback fonts are listed in case the preferred font is unavailable on the user’s device.
 
----
+- **Syntax:**
+  - A list of font names, separated by commas.
+  - Last option is typically a **generic font family** (`serif`, `sans-serif`, `monospace`).
 
-# CSS Variables (Custom Properties)
 
-- Defining, using, and manipulating custom properties
-- Example: `--primary-color: #3498db;`
+  ```css
+  h1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  ```
 
----
-
-# CSS Units Explained
-
-- Absolute vs. relative units: px, em, rem, vh, vw, %
-- Choosing appropriate units for responsive design
-
----
-
-# Color Management in CSS
-
-- Color models: HEX, RGB, RGBA, HSL, HSLA
-- Using opacity with RGBA and HSLA
+- **Tip:**
+  - Use quotes for multi-word font names (e.g., `'Times New Roman'`).
+  - Generic font families help ensure readable fonts across devices.
 
 ---
 
-# Typography and Font Styling
+# Font Size and Responsive Text
 
-- Font properties: `font-family`, `font-size`, `font-weight`, `font-style`
-- Example with web-safe fonts and custom fonts
+- **What Is `font-size`?**
+  - `font-size` controls text size. Use units like `px`, `em`, `rem`, `%`, or viewport-based units (`vw`, `vh`).
+  - Larger fonts enhance readability, while smaller fonts save space.
 
----
+- **Responsive Font Sizing:**
+  - Use relative units (`em`, `rem`) for scalable, responsive designs.
+  - Viewport units like `vw` make fonts scale with screen size.
 
-# Text Effects
 
-- Applying `text-shadow`, `letter-spacing`, `word-spacing`, `text-transform`
-- Example: Creating embossed or shadowed text effects
+  ```css
+  p {
+    font-size: 1.2em; /* Scales with parent element */
+  }
+  .responsive {
+    font-size: 3vw; /* Scales with viewport width */
+  }
+  ```
 
----
-
-# Backgrounds and Gradients
-
-- Background properties: color, image, size, repeat, position, attachment
-- Creating linear and radial gradients with examples
-
----
-
-# Borders and Outline Styling
-
-- Border properties: `border-radius`, `border-image`, `border-style`
-- Differences between borders and outlines
+- **Tip:**
+  - For consistency, use `rem` to maintain relative scaling across components, based on root font size.
 
 ---
 
-# CSS Box Model in Detail
+# Font Weight and Style
 
-- Understanding content, padding, border, and margin in the box model
-- Example of calculating box dimensions with `box-sizing`
+- **What Is `font-weight`?**
+  - `font-weight` adjusts the boldness of text.
+  - Common values: `normal`, `bold`, `lighter`, `bolder`, or numeric values (100 to 900).
 
----
+- **Font Style:**
+  - `font-style` sets the text style to `normal`, `italic`, or `oblique`.
 
-# Flexbox Layout System
 
-- Flex container and flex item properties
-- Key properties: `flex-direction`, `justify-content`, `align-items`, `flex-wrap`
+  ```css
+  .bold-text {
+    font-weight: bold;
+  }
+  .light-text {
+    font-weight: 300;
+  }
+  .italic-text {
+    font-style: italic;
+  }
+  ```
 
----
-
-# Advanced Flexbox Techniques
-
-- Creating complex layouts with nested flex containers
-- Examples with `align-self`, `order`, and `flex-grow`
-
----
-
-# CSS Grid Layout System
-
-- Defining grid containers with `display: grid`
-- Creating rows and columns with `grid-template-rows` and `grid-template-columns`
+  - Numeric values for `font-weight` offer precise control, with lower numbers being lighter and higher numbers being bolder.
 
 ---
 
-# Grid Areas and Nested Grids
+# Line Height and Letter Spacing
 
-- Using `grid-template-areas` to name and place grid sections
-- Example of nested grids for complex layouts
+- **What Is `line-height`?**
+  - `line-height` controls the vertical spacing between lines of text.
+  - Can be a unitless number (relative to `font-size`), percentage, or length unit (e.g., `px`, `em`).
 
----
+- **Letter Spacing:**
+  - `letter-spacing` adjusts the space between characters. Can be positive (wider) or negative (narrower).
+  - Useful for enhancing readability or creating design effects.
 
-# Responsive Web Design with Media Queries
 
-- Creating breakpoints with media queries
-- Example: `@media (max-width: 768px) { ... }`
+  ```css
+  p {
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+  ```
 
----
-
-# Mobile-First Design Philosophy
-
-- Benefits of starting with mobile styles and enhancing for larger screens
-- Example media query adjustments for tablet and desktop
-
----
-
-# CSS Transitions
-
-- Transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`
-- Example: Smoothly changing button colors on hover
+- **Tip:**
+  - Setting a comfortable `line-height` (1.4–1.6) improves readability, especially for long paragraphs.
 
 ---
 
-# CSS Animations
+# Advanced Fonts: Google Fonts and Web Fonts
 
-- Defining animations with `@keyframes`
-- Animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`
+- **What Are Web Fonts?**
+  - Web fonts are hosted fonts accessed over the web, providing more design flexibility.
+  - Popular options include **Google Fonts** and **Adobe Fonts**.
 
----
+- **Using Google Fonts:**
+  - Go to [Google Fonts](https://fonts.google.com), select a font, and add the `<link>` to your HTML or import it in CSS.
 
-# Advanced Animation Techniques
 
-- Using `transform` and `animation` together for dynamic effects
-- Example: Spinning icons and pulsing effects
+  ```css
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
----
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  ```
 
-# CSS Transformations
+- **Font Loading Optimization:**
+  - Use the `font-display` property with values like `swap` or `optional` to improve loading speed.
+  - Example: `font-display: swap;` (ensures text is visible during font load).
 
-- Applying `translate`, `rotate`, `scale`, `skew`
-- Example: Creating a 3D effect on hover
-
----
-
-# CSS Filters and Effects
-
-- Using `filter` for grayscale, blur, brightness, contrast
-- Example: Creating a grayscale-to-color hover effect
-
----
-
-# Using CSS to Create Shapes
-
-- Simple shapes with borders, circles, and triangles
-- Example: Creating a triangle with `border`
-
----
-
-# CSS Clip Path for Advanced Shapes
-
-- Using `clip-path` for complex shapes like polygons, circles, and custom paths
-- Example: Cropping images with clip-path
-
----
-
-# CSS Gradients and Patterns
-
-- Creating repeating patterns with CSS gradients
-- Example: Chevron patterns with linear-gradient
-
----
-
-# CSS Masking
-
-- Using `mask-image` and `mask-size` for custom image effects
-- Example: Creating text cutouts and masked images
-
----
-
-# CSS Blend Modes
-
-- Using `mix-blend-mode` and `background-blend-mode` for color blending
-- Example: Overlay effects with blend modes
-
----
-
-# Flexbox vs. Grid: When to Use Each
-
-- Comparing Flexbox and Grid use cases
-- Examples of layouts best suited for each
-
----
-
-# CSS Logical Properties
-
-- Understanding `margin-inline`, `padding-block`, `border-start`
-- Supporting languages with different writing directions
-
----
-
-# Accessibility with CSS
-
-- Using CSS for improved readability and accessibility
-- Example: `focus` and `:hover` for keyboard navigation
-
----
-
-# CSS Frameworks and Preprocessors
-
-- Overview of popular CSS frameworks: Bootstrap, Tailwind, Bulma
-- Introduction to preprocessors: Sass, LESS
-
----
-
-# CSS Methodologies: BEM, OOCSS, SMACSS
-
-- Overview of CSS naming conventions and organizational techniques
-- Examples of BEM (Block, Element, Modifier) syntax
-
----
-
-# CSS in JavaScript
-
-- Inline styles vs. styled-components vs. CSS Modules
-- Example of styling React components with CSS Modules
-
----
-
-# CSS Grid Template Areas Example
-
-- Using named grid areas for intuitive layout
-- Example with headers, footers, and sidebars
-
----
-
-# Fluid Typography and Responsive Units
-
-- Using `calc()`, `min()`, and `max()` for responsive font sizes
-- Example: `font-size: calc(1rem + 2vw);`
-
----
-
-# Advanced Selectors: :is(), :where(), :has()
-
-- Reducing specificity with `:is()` and `:where()`
-- Using `:has()` for parent-child relationships (currently limited support)
-
----
-
-# Print Stylesheets
-
-- Creating styles for printed versions with `@media print`
-- Example of removing navigation for print
-
----
-
-# CSS Grid and Flexbox Together
-
-- Combining Grid and Flexbox for hybrid layouts
-- Example: Grid for the overall layout, Flexbox for individual sections
-
----
-
-# CSS Resets and Normalization
-
-- Differences between CSS resets and normalize.css
-- Example of a basic CSS reset
-
----
-
-# Future of CSS: Upcoming Features
-
-- New and experimental CSS features like container queries, CSS Houdini
-- Potential impact on web design
-
----
-
-# Conclusion and Best Practices
-
-- Summary of key CSS concepts
-- Tips for writing maintainable and scalable CSS
-
----
-
-# Q&A and Further Resources
-
-- Open floor for questions
-- Suggested resources for continued learning: MDN, CSS Tricks, CodePen
+- **Tip:**
+  - Web fonts enhance typography but can affect load times; optimize by only loading needed font weights and styles.
