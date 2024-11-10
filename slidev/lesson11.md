@@ -14,217 +14,303 @@ Nov 10, 2024
 
 ---
 
-# Flexbox Layout System
-
-- Flex container and flex item properties
-- Key properties: `flex-direction`, `justify-content`, `align-items`, `flex-wrap`
-
----
-
-# Advanced Flexbox Techniques
-
-- Creating complex layouts with nested flex containers
-- Examples with `align-self`, `order`, and `flex-grow`
+# CSS Flexbox Layout: Introduction
+- **What Is Flexbox?**
+  - CSS Flexbox (Flexible Box) Layout is a layout model that allows you to create complex, responsive layouts easily.
+  - Designed for one-dimensional layouts (either in rows or columns).
+  - Primary concepts include **flex containers** and **flex items**.
+- **Advantages of Flexbox:**
+  - Provides alignment and distribution control for elements.
+  - Allows for dynamic resizing, reordering, and responsiveness.
 
 ---
 
-# CSS Grid Layout System
-
-- Defining grid containers with `display: grid`
-- Creating rows and columns with `grid-template-rows` and `grid-template-columns`
-
----
-
-# Grid Areas and Nested Grids
-
-- Using `grid-template-areas` to name and place grid sections
-- Example of nested grids for complex layouts
-
----
-
-# Responsive Web Design with Media Queries
-
-- Creating breakpoints with media queries
-- Example: `@media (max-width: 768px) { ... }`
+# Flex Container Basics
+- **Setting Up the Flex Container:**
+  - Define a flex container by setting `display: flex;` on a parent element.
+  - Flex items are the direct children of this container.
+  - Example:
+    ```css
+    .container {
+      display: flex;
+    }
+    ```
+- **Flex Direction:**
+  - `flex-direction` sets the main axis (default is `row`).
+  - Common values: `row`, `row-reverse`, `column`, `column-reverse`.
 
 ---
 
-# Mobile-First Design Philosophy
-
-- Benefits of starting with mobile styles and enhancing for larger screens
-- Example media query adjustments for tablet and desktop
-
----
-
-# CSS Transitions
-
-- Transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`
-- Example: Smoothly changing button colors on hover
-
----
-
-# CSS Animations
-
-- Defining animations with `@keyframes`
-- Animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`
+# Flex Direction
+- **Main and Cross Axes:**
+  - `flex-direction` defines the main axis along which flex items are placed.
+  - `row`: items align left-to-right.
+  - `column`: items align top-to-bottom.
+- **Example:**
+  ```css
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  ```
 
 ---
 
-# Advanced Animation Techniques
+# Flex Wrap
 
-- Using `transform` and `animation` together for dynamic effects
-- Example: Spinning icons and pulsing effects
+- **What Is Flex Wrap?**
+  - `flex-wrap` allows flex items to wrap onto multiple lines if there isn’t enough space in the container.
+  - Common values: `nowrap`, `wrap`, `wrap-reverse`.
+- **Example:**
 
----
-
-# CSS Transformations
-
-- Applying `translate`, `rotate`, `scale`, `skew`
-- Example: Creating a 3D effect on hover
-
----
-
-# CSS Filters and Effects
-
-- Using `filter` for grayscale, blur, brightness, contrast
-- Example: Creating a grayscale-to-color hover effect
+  ```css
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ```
 
 ---
 
-# Using CSS to Create Shapes
+# Justify Content
 
-- Simple shapes with borders, circles, and triangles
-- Example: Creating a triangle with `border`
+- **Align Items Along Main Axis:**
+  - `justify-content` aligns flex items along the main axis.
+  - Common values: `flex-start`, `flex-end`, `center`, `space-between`, `space-around`.
+- **Example:**
 
----
-
-# CSS Clip Path for Advanced Shapes
-
-- Using `clip-path` for complex shapes like polygons, circles, and custom paths
-- Example: Cropping images with clip-path
-
----
-
-# CSS Gradients and Patterns
-
-- Creating repeating patterns with CSS gradients
-- Example: Chevron patterns with linear-gradient
+  ```css
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  ```
 
 ---
 
-# CSS Masking
+# Align Items
 
-- Using `mask-image` and `mask-size` for custom image effects
-- Example: Creating text cutouts and masked images
+- **Align Items Along Cross Axis:**
+  - `align-items` controls the alignment along the cross axis.
+  - Common values: `stretch` (default), `flex-start`, `flex-end`, `center`, `baseline`.
+- **Example:**
 
----
-
-# CSS Blend Modes
-
-- Using `mix-blend-mode` and `background-blend-mode` for color blending
-- Example: Overlay effects with blend modes
-
----
-
-# Flexbox vs. Grid: When to Use Each
-
-- Comparing Flexbox and Grid use cases
-- Examples of layouts best suited for each
+  ```css
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  ```
 
 ---
 
-# CSS Logical Properties
+# Align Content
 
-- Understanding `margin-inline`, `padding-block`, `border-start`
-- Supporting languages with different writing directions
-
----
-
-# Accessibility with CSS
-
-- Using CSS for improved readability and accessibility
-- Example: `focus` and `:hover` for keyboard navigation
+- **Align Multi-line Flex Items:**
+  - `align-content` aligns multiple lines along the cross axis.
+  - Only applicable if `flex-wrap` is used and items wrap onto multiple lines.
+- **Values:** `stretch`, `center`, `flex-start`, `flex-end`, `space-between`, `space-around`.
 
 ---
 
-# CSS Frameworks and Preprocessors
+# Flex Grow
 
-- Overview of popular CSS frameworks: Bootstrap, Tailwind, Bulma
-- Introduction to preprocessors: Sass, LESS
+- **What Is Flex Grow?**
+  - `flex-grow` defines how much a flex item can grow relative to others.
+  - Higher values cause an item to grow more compared to items with lower values.
+- **Example:**
 
----
-
-# CSS Methodologies: BEM, OOCSS, SMACSS
-
-- Overview of CSS naming conventions and organizational techniques
-- Examples of BEM (Block, Element, Modifier) syntax
-
----
-
-# CSS in JavaScript
-
-- Inline styles vs. styled-components vs. CSS Modules
-- Example of styling React components with CSS Modules
+  ```css
+  .item {
+    flex-grow: 2;
+  }
+  ```
 
 ---
 
-# CSS Grid Template Areas Example
+# Flex Shrink
 
-- Using named grid areas for intuitive layout
-- Example with headers, footers, and sidebars
+- **What Is Flex Shrink?**
+  - `flex-shrink` determines how much a flex item can shrink if space is limited.
+  - Items with higher `flex-shrink` values will shrink more than others.
+- **Example:**
 
----
-
-# Fluid Typography and Responsive Units
-
-- Using `calc()`, `min()`, and `max()` for responsive font sizes
-- Example: `font-size: calc(1rem + 2vw);`
-
----
-
-# Advanced Selectors: :is(), :where(), :has()
-
-- Reducing specificity with `:is()` and `:where()`
-- Using `:has()` for parent-child relationships (currently limited support)
+  ```css
+  .item {
+    flex-shrink: 1;
+  }
+  ```
 
 ---
 
-# Print Stylesheets
+# Flex Basis
 
-- Creating styles for printed versions with `@media print`
-- Example of removing navigation for print
+- **What Is Flex Basis?**
+  - `flex-basis` sets the initial size of a flex item before any growing or shrinking.
+  - Overrides `width` or `height` in flex layouts.
+- **Example:**
 
----
-
-# CSS Grid and Flexbox Together
-
-- Combining Grid and Flexbox for hybrid layouts
-- Example: Grid for the overall layout, Flexbox for individual sections
-
----
-
-# CSS Resets and Normalization
-
-- Differences between CSS resets and normalize.css
-- Example of a basic CSS reset
+  ```css
+  .item {
+    flex-basis: 200px;
+  }
+  ```
 
 ---
 
-# Future of CSS: Upcoming Features
+# Flex Shorthand Property
 
-- New and experimental CSS features like container queries, CSS Houdini
-- Potential impact on web design
+- **Using `flex` as Shorthand:**
+  - The `flex` shorthand combines `flex-grow`, `flex-shrink`, and `flex-basis` in one property.
+  - Example: `flex: 1 0 200px;`
+- **Example:**
+
+  ```css
+  .item {
+    flex: 1 1 auto;
+  }
+  ```
 
 ---
 
-# Conclusion and Best Practices
+# Order
 
-- Summary of key CSS concepts
-- Tips for writing maintainable and scalable CSS
+- **Control Item Order:**
+  - `order` allows you to rearrange the visual order of flex items.
+  - Lower values appear earlier; default is `0`.
+- **Example:**
+
+  ```css
+  .item {
+    order: 2;
+  }
+  ```
 
 ---
 
-# Q&A and Further Resources
+# Align Self
 
-- Open floor for questions
-- Suggested resources for continued learning: MDN, CSS Tricks, CodePen
+- **Override Alignment for Individual Items:**
+  - `align-self` overrides `align-items` for individual flex items.
+  - Values: `auto`, `flex-start`, `flex-end`, `center`, `baseline`, `stretch`.
+- **Example:**
+
+  ```css
+  .item {
+    align-self: center;
+  }
+  ```
+
+---
+
+# Nested Flex Containers
+
+- **Using Flexbox Inside Flexbox:**
+  - Flex items can themselves be flex containers, allowing complex layouts.
+  - Example:
+
+    ```css
+    .outer {
+      display: flex;
+    }
+    .inner {
+      display: flex;
+    }
+    ```
+
+---
+
+# Responsive Flexbox Layouts
+
+- **Using Media Queries:**
+  - Combine Flexbox with media queries for responsive designs.
+  - Example:
+
+    ```css
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+    ```
+
+---
+
+# Horizontal and Vertical Centering
+
+- **Centering with Flexbox:**
+  - Combine `justify-content: center` and `align-items: center` to center items.
+- **Example:**
+
+  ```css
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ```
+
+---
+
+# Practical Example 1: Navbar
+
+- **Building a Flexbox Navbar:**
+  - Flexbox simplifies alignment of nav items horizontally or vertically.
+  - Example:
+
+    ```css
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+    }
+    ```
+
+---
+
+# Practical Example 2: Card Layout
+
+- **Using Flexbox for Card Layouts:**
+  - Flexbox is ideal for evenly spacing cards and making them responsive.
+  - Example:
+
+    ```css
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1 1 200px;
+    }
+    ```
+
+---
+
+# Practical Example 3: Sidebar Layout
+
+- **Creating Sidebar Layouts with Flexbox:**
+  - Flexbox allows you to build sidebars alongside main content areas.
+  - Example:
+
+    ```css
+    .container {
+      display: flex;
+    }
+    .sidebar {
+      flex: 1;
+    }
+    .main-content {
+      flex: 3;
+    }
+    ```
+
+---
+
+# Summary and Best Practices
+
+- **Key Points:**
+  - Understand `flex-direction`, `justify-content`, and `align-items`.
+  - Use `flex-grow`, `flex-shrink`, and `flex-basis` to control item sizing.
+  - Experiment with nesting flex containers for complex layouts.
+- **Tips:**
+  - Always test layouts on different screen sizes for responsiveness.
+  - Use Flexbox in combination with other CSS layout models (e.g., Grid).
