@@ -14,203 +14,316 @@ Nov 17, 2024
 
 ---
 
-# CSS Grid Layout System
-
-- Defining grid containers with `display: grid`
-- Creating rows and columns with `grid-template-rows` and `grid-template-columns`
-
----
-
-# Grid Areas and Nested Grids
-
-- Using `grid-template-areas` to name and place grid sections
-- Example of nested grids for complex layouts
+# CSS Grid Layout: Introduction
+- **What Is CSS Grid?**
+  - CSS Grid is a powerful, two-dimensional layout system for CSS.
+  - Allows you to create complex, responsive layouts for rows and columns.
+- **Key Components:**
+  - **Grid Container:** Parent element with `display: grid`.
+  - **Grid Items:** Direct children of the grid container, positioned in grid cells.
 
 ---
 
-# Responsive Web Design with Media Queries
-
-- Creating breakpoints with media queries
-- Example: `@media (max-width: 768px) { ... }`
-
----
-
-# Mobile-First Design Philosophy
-
-- Benefits of starting with mobile styles and enhancing for larger screens
-- Example media query adjustments for tablet and desktop
-
----
-
-# CSS Transitions
-
-- Transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, `transition-delay`
-- Example: Smoothly changing button colors on hover
+# Setting Up the Grid Container
+- **Creating a Grid Container:**
+  - Set up the grid container with `display: grid;`.
+  - Grid items will be automatically arranged in rows.
+- **Example:**
+  ```css
+  .container {
+    display: grid;
+  }
+  ```
 
 ---
 
-# CSS Animations
+# Defining Rows and Columns
 
-- Defining animations with `@keyframes`
-- Animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`
+- **Using `grid-template-rows` and `grid-template-columns`:**
+  - Define the number and size of rows/columns.
+- **Example:**
 
----
+  ```css
+  .container {
+    display: grid;
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 1fr 2fr;
+  }
+  ```
 
-# Advanced Animation Techniques
-
-- Using `transform` and `animation` together for dynamic effects
-- Example: Spinning icons and pulsing effects
-
----
-
-# CSS Transformations
-
-- Applying `translate`, `rotate`, `scale`, `skew`
-- Example: Creating a 3D effect on hover
+  - Here, the container has two rows and two columns.
 
 ---
 
-# CSS Filters and Effects
+# Fractional Units (fr)
 
-- Using `filter` for grayscale, blur, brightness, contrast
-- Example: Creating a grayscale-to-color hover effect
+- **What Is `fr`?**
+  - `fr` stands for "fractional unit," allocating space relative to other fr units.
+- **Example:**
 
----
+  ```css
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  ```
 
-# Using CSS to Create Shapes
-
-- Simple shapes with borders, circles, and triangles
-- Example: Creating a triangle with `border`
-
----
-
-# CSS Clip Path for Advanced Shapes
-
-- Using `clip-path` for complex shapes like polygons, circles, and custom paths
-- Example: Cropping images with clip-path
+  - Column 1 gets one fraction, and column 2 gets three fractions of available space.
 
 ---
 
-# CSS Gradients and Patterns
+# Grid Gap
 
-- Creating repeating patterns with CSS gradients
-- Example: Chevron patterns with linear-gradient
+- **Spacing Between Grid Items:**
+  - `gap` adds space between rows and columns.
+  - Previously, `grid-gap` was used but is now shortened to `gap`.
+- **Example:**
 
----
-
-# CSS Masking
-
-- Using `mask-image` and `mask-size` for custom image effects
-- Example: Creating text cutouts and masked images
-
----
-
-# CSS Blend Modes
-
-- Using `mix-blend-mode` and `background-blend-mode` for color blending
-- Example: Overlay effects with blend modes
+  ```css
+  .container {
+    display: grid;
+    gap: 10px;
+  }
+  ```
 
 ---
 
-# Flexbox vs. Grid: When to Use Each
+# Grid Lines and Cell Positioning
 
-- Comparing Flexbox and Grid use cases
-- Examples of layouts best suited for each
+- **Understanding Grid Lines:**
+  - Grid lines are the horizontal and vertical lines that separate grid cells.
+  - Use line numbers to position grid items precisely.
+- **Example:**
 
----
-
-# CSS Logical Properties
-
-- Understanding `margin-inline`, `padding-block`, `border-start`
-- Supporting languages with different writing directions
-
----
-
-# Accessibility with CSS
-
-- Using CSS for improved readability and accessibility
-- Example: `focus` and `:hover` for keyboard navigation
+  ```css
+  .item {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  ```
 
 ---
 
-# CSS Frameworks and Preprocessors
+# Spanning Rows and Columns
 
-- Overview of popular CSS frameworks: Bootstrap, Tailwind, Bulma
-- Introduction to preprocessors: Sass, LESS
+- **Using `grid-column` and `grid-row` to Span Cells:**
+  - Control the size of items by spanning across multiple rows or columns.
+- **Example:**
 
----
-
-# CSS Methodologies: BEM, OOCSS, SMACSS
-
-- Overview of CSS naming conventions and organizational techniques
-- Examples of BEM (Block, Element, Modifier) syntax
-
----
-
-# CSS in JavaScript
-
-- Inline styles vs. styled-components vs. CSS Modules
-- Example of styling React components with CSS Modules
+  ```css
+  .item {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  ```
 
 ---
 
-# CSS Grid Template Areas Example
+# Implicit vs. Explicit Grids
 
-- Using named grid areas for intuitive layout
-- Example with headers, footers, and sidebars
+- **Creating Explicit and Implicit Grids:**
+  - Explicit grids are defined using `grid-template-rows` and `grid-template-columns`.
+  - Implicit grids are created automatically for items without a defined place.
+- **Example:**
 
----
-
-# Fluid Typography and Responsive Units
-
-- Using `calc()`, `min()`, and `max()` for responsive font sizes
-- Example: `font-size: calc(1rem + 2vw);`
-
----
-
-# Advanced Selectors: :is(), :where(), :has()
-
-- Reducing specificity with `:is()` and `:where()`
-- Using `:has()` for parent-child relationships (currently limited support)
+  ```css
+  .container {
+    display: grid;
+    grid-template-rows: 100px 100px;
+  }
+  ```
 
 ---
 
-# Print Stylesheets
+# Auto-placement of Items
 
-- Creating styles for printed versions with `@media print`
-- Example of removing navigation for print
+- **Using the Grid's Auto-placement Algorithm:**
+  - By default, items fill the grid in row-first order.
+  - Use `grid-auto-flow` to change this order to column-first or other options.
+- **Example:**
 
----
-
-# CSS Grid and Flexbox Together
-
-- Combining Grid and Flexbox for hybrid layouts
-- Example: Grid for the overall layout, Flexbox for individual sections
-
----
-
-# CSS Resets and Normalization
-
-- Differences between CSS resets and normalize.css
-- Example of a basic CSS reset
+  ```css
+  .container {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  ```
 
 ---
 
-# Future of CSS: Upcoming Features
+# Auto-sizing Rows and Columns
 
-- New and experimental CSS features like container queries, CSS Houdini
-- Potential impact on web design
+- **Using `auto` to Dynamically Size Items:**
+  - The `auto` keyword lets the browser decide the size based on content.
+- **Example:**
+
+  ```css
+  .container {
+    grid-template-columns: 200px auto;
+  }
+  ```
 
 ---
 
-# Conclusion and Best Practices
+# Repeat Function
 
-- Summary of key CSS concepts
-- Tips for writing maintainable and scalable CSS
+- **Using `repeat()` for Consistency:**
+  - `repeat()` helps avoid redundancy by defining repetitive sizes.
+- **Example:**
+
+  ```css
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  ```
 
 ---
 
-# Q&A and Further Resources
+# Minmax Function
 
-- Open floor for questions
-- Suggested resources for continued learning: MDN, CSS Tricks, CodePen
+- **Creating Flexible Ranges with `minmax()`:**
+  - `minmax(min, max)` sets a minimum and maximum size for a track.
+- **Example:**
+
+  ```css
+  .container {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+  ```
+
+---
+
+# Aligning Items in the Grid
+
+- **Aligning Items Horizontally and Vertically:**
+  - Use `justify-items` and `align-items` for horizontal and vertical alignment.
+- **Example:**
+
+  ```css
+  .container {
+    justify-items: center;
+    align-items: start;
+  }
+  ```
+
+---
+
+# Aligning the Grid as a Whole
+
+- **Aligning the Entire Grid Within Its Container:**
+  - Use `justify-content` and `align-content` for full grid alignment.
+- **Example:**
+
+  ```css
+  .container {
+    justify-content: space-around;
+    align-content: center;
+  }
+  ```
+
+---
+
+# Grid Template Areas
+
+- **Using `grid-template-areas` to Name Grid Sections:**
+  - Assign names to cells and control layout in a readable way.
+- **Example:**
+
+  ```css
+  .container {
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+  ```
+
+---
+
+# Placing Items Using Grid Areas
+
+- **Using `grid-area` to Position Items:**
+  - Place items by referencing named grid areas.
+- **Example:**
+
+  ```css
+  .header {
+    grid-area: header;
+  }
+  ```
+
+---
+
+# Nested Grids
+
+- **Creating Grids Within Grids:**
+  - Flexibility to use grid containers within grid items for complex layouts.
+- **Example:**
+
+  ```css
+  .item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  ```
+
+---
+
+# Responsive Grid Layouts
+
+- **Using Media Queries with Grid Layouts:**
+  - Adjust grid layouts based on screen size for responsiveness.
+- **Example:**
+
+  ```css
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  ```
+
+---
+
+# Practical Example 1: Basic Grid Layout
+
+- **Simple 2x2 Grid:**
+  - A straightforward example with two rows and two columns.
+  - Example:
+
+    ```css
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 100px;
+    }
+    ```
+
+---
+
+# Practical Example 2: Gallery Layout
+
+- **Responsive Image Gallery with Grid:**
+  - Use repeat and gap to create a dynamic gallery.
+  - Example:
+
+    ```css
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    ```
+
+---
+
+# Summary and Best Practices
+
+- **Key Points:**
+  - Use `grid-template` properties to control the layout.
+  - Combine `fr`, `repeat()`, and `minmax()` for flexibility.
+  - Test layouts on various screen sizes.
+- **Tips:**
+  - Start with simple layouts, and experiment with nested grids.
+  - Use `grid-template-areas` for clear, semantic layouts.
+

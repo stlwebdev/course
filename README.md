@@ -7,9 +7,12 @@ Teacher self-introduction and brief overview of course outline.
 
 Computer and editor setup. Parents please help students download and install [VS Code](https://code.visualstudio.com/download), please also install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
-Please help students get up an email address and sign up a [GitHub](https://github.com/) account. 
 
+Please help students get up an email address.
+
+<span style="text-decoration: line-through"> Please help students sign up a [GitHub](https://github.com/) account.
 (optional) Homework 0: [Learn Git and Github](https://classroom.github.com/a/2jR2W7GG)
+</span>
 
 ## Lesson 1
 
@@ -66,3 +69,37 @@ npm run lesson3
 
 * How to apply CSS (continued)
 * CSS colors
+
+## Lesson 9
+
+* CSS units and borders
+
+## Lesson 10
+
+* CSS fonts
+
+## Lesson 11
+
+* CSS Flexbox layout
+
+## Lesson 12
+
+* CSS Grid layout
+
+## Lesson 13
+
+* Padding, margin
+* CSS animations
+* Media query syntax for mobile development
+
+## Lesson 14
+
+* Final project and presentation
+* Each student get 2 mins to present how s/he applied CSS to the website they built for mid-term project, can also present a brand new website.
+* consider the following CSS attributes need to be included:
+
+    * one of the layout, flex or grid
+    * font
+    * color, background-color
+    * padding, margin
+    * border
