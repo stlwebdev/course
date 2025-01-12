@@ -1,6 +1,8 @@
 
 # Course lectures for SLMCS webdev 24-25
 
+# Fall semester
+
 ## Lesson 0
 
 Teacher self-introduction and brief overview of course outline.
@@ -103,3 +105,13 @@ npm run lesson3
     * color, background-color
     * padding, margin
     * border
+
+
+# Spring semester
+
+## Lesson 15
+
+* setup nodejs for JS development
+* your first JS code: Hello World! with `console.log`
+
+## Lesson 16
