@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Fun</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f8ff;
+    font-family: Arial, sans-serif;
+  }
+  .dancing-box {
+    width: 100px;
+    height: 100px;
+    background: #ff6347;
+    animation: dance 2s infinite alternate ease-in-out;
+  }
+  @keyframes dance {
+    0% { transform: rotate(0) scale(1); }
+    50% { transform: rotate(180deg) scale(1.5); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+</style>
+</head>
+<body>
+  <div class="dancing-box"></div>
+</body>
+</html>
+
+<!--
+
+https://www.csszengarden.com/
+https://css-loaders.com/
+https://theuselessweb.com/
+https://paint.toys/calligram/
+https://maze.toys/mazes/medium/daily/
+https://codepen.io/collection/AKkZro
+
+-->
