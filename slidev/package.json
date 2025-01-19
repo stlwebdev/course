@@ -28,7 +28,9 @@
         "lesson13": "slidev --open lesson13.md",
         "export13": "slidev export lesson13.md",
         "lesson15": "slidev --open lesson15.md",
-        "export15": "slidev export lesson15.md"
+        "export15": "slidev export lesson15.md",
+        "lesson16": "slidev --open lesson16.md",
+        "export16": "slidev export lesson16.md"
     },
     "dependencies": {
         "@slidev/cli": "^0.49.24",
