@@ -115,3 +115,15 @@ npm run lesson3
 * your first JS code: Hello World! with `console.log`
 
 ## Lesson 16
+
+* variables and data types
+
+## Lesson 17
+
+* Input and Output
+* Basic Operators
+
+## Lesson 18
+
+* Conditional Statements
+* Loops
