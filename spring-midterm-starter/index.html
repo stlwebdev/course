@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio practice</title>
+</head>
+<body>
+    <h1>online music instrument</h1>
+    <audio src="audios/clap.wav" id="a"></audio>
+    <button onclick="playAudio('a')" >A - clap</button>
+
+    <script>
+        function playAudio(id) {
+            var audio = document.getElementById(id);
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+</body>
+</html>

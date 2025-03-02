@@ -7,5 +7,6 @@
         }
     ],
     "java.jdt.ls.java.home": "/Users/d/Documents/amazon-corretto-21.jdk/Contents/Home",
-    "java.home": "/Users/d/Documents/amazon-corretto-21.jdk/Contents/Home"
+    "java.home": "/Users/d/Documents/amazon-corretto-21.jdk/Contents/Home",
+    "liveServer.settings.port": 5501
 }
