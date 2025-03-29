@@ -1,0 +1,21 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+body.light-theme {
+    background-color: white;
+    color: black;
+}
+
+#count {
+    font-size: 30px;
+}
