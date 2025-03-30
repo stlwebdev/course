@@ -19,3 +19,30 @@ body.light-theme {
 #count {
     font-size: 30px;
 }
+
+.dark-theme #theme-toggle2 svg:first-child {
+        display: block;
+}
+.dark-theme #theme-toggle2 svg:last-child {
+    display: none;
+}
+
+.light-theme #theme-toggle2 svg:last-child {
+        display: block;
+}
+.light-theme #theme-toggle2 svg:first-child {
+        display: none;
+    }
+
+#theme-toggle2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0;
+}
+
+#box {
+    display: flex;
+    justify-content: space-between;
+}
