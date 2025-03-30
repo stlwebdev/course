@@ -1,0 +1,24 @@
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.light #toggle2 svg:first-child {
+    display: block;
+}
+.light #toggle2 svg:last-child {
+    display: none;
+}
+
+.dark #toggle2 svg:first-child {
+    display: none;
+}
+
+.dark #toggle2 svg:last-child {
+    display: block;
+}
