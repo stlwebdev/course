@@ -1,0 +1,9 @@
+svg {
+    background-color: beige;
+}
+#my-rect {
+    fill: yellow;
+    stroke-width: 5;
+    stroke: red;
+    opacity: 0.8;
+}
