@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Session 2 - Collision</title>
+  <style>
+    canvas { background: #eee; display: block; margin: 20px auto; }
+  </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let player = { x: 180, y: 350, width: 40, height: 40, speed: 50 };
+  let falling = { x: Math.random() * 360, y: 0, width: 30, height: 30, speed: 2 };
+  let score = 0;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') player.x -= player.speed;
+    if (e.key === 'ArrowRight') player.x += player.speed;
+  });
+
+  function isColliding(a, b) {
+    return (
+      a.x < b.x + b.width &&
+      a.x + a.width > b.x &&
+      a.y < b.y + b.height &&
+      a.y + a.height > b.y
+    );
+  }
+
+  function update() {
+    falling.y += falling.speed;
+    if (falling.y > canvas.height) {
+      falling.y = 0;
+      falling.x = Math.random() * 360;
+    }
+    if (isColliding(player, falling)) {
+      score++;
+      falling.y = 0;
+      falling.x = Math.random() * 360;
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.fillStyle = 'red';
+    ctx.fillRect(falling.x, falling.y, falling.width, falling.height);
+    ctx.fillStyle = 'black';
+    ctx.fillText(`Score: ${score}`, 10, 20);
+  }
+
+  function gameLoop() {
+    update();
+    draw();
+    requestAnimationFrame(gameLoop);
+  }
+
+  gameLoop();
+</script>
+</body>
+</html>

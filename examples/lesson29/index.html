@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Session 3 - Dodge Blocks</title>
+  <style>
+    canvas { background: #eee; display: block; margin: 20px auto; }
+  </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let player = { x: 180, y: 350, width: 40, height: 40, speed: 5 };
+  let blocks = [];
+  let gameOver = false;
+  let score = 0;
+
+  function spawnBlock() {
+    blocks.push({ x: Math.random() * 360, y: 0, width: 30, height: 30, speed: 3 });
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') player.x -= player.speed;
+    if (e.key === 'ArrowRight') player.x += player.speed;
+  });
+
+  function isColliding(a, b) {
+    return (
+      a.x < b.x + b.width &&
+      a.x + a.width > b.x &&
+      a.y < b.y + b.height &&
+      a.y + a.height > b.y
+    );
+  }
+
+  function update() {
+    if (gameOver) return;
+    for (let block of blocks) {
+      block.y += block.speed;
+      if (isColliding(player, block)) gameOver = true;
+    }
+    blocks = blocks.filter(block => block.y < canvas.height);
+    score++;
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.fillStyle = 'red';
+    for (let block of blocks) {
+      ctx.fillRect(block.x, block.y, block.width, block.height);
+    }
+    ctx.fillStyle = 'black';
+    ctx.fillText(`Score: ${score}`, 10, 20);
+    if (gameOver) ctx.fillText('Game Over!', 160, 200);
+  }
+
+  function gameLoop() {
+    update();
+    draw();
+    if (!gameOver) requestAnimationFrame(gameLoop);
+  }
+
+  setInterval(spawnBlock, 1000);
+  gameLoop();
+</script>
+</body>
+</html>
